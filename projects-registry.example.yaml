@@ -1,0 +1,62 @@
+# Projects registry — EXAMPLE
+# External file holding client billing data and payment schedules.
+# The tool consumes it strictly READ-ONLY (it never writes to it).
+# Point registry_path in factura-config.yaml at your real registry.
+
+projects:
+  - id: acme-001
+    name: Acme Website
+    path: "/projects/acme"            # PDFs land in <path>/docs/facturas/
+    financials:
+      currency: USD                   # USD payments trigger the exchange-rate flow
+    billing:
+      razon_social: "ACME S.A."
+      cuit: "30123456789"
+      condicion_iva: "IVA Responsable Inscripto"
+      domicilio: "Av. Siempreviva 742, CABA"
+      tipo_comprobante: 11            # 11 = Factura C, 211 = FCE MiPyMEs C
+      referencia_comercial: ""        # e.g. client purchase-order number (FCE)
+      opcion_transferencia: "SCA"     # FCE transfer option
+      certificado_mipyme: false
+    payments:
+      - number: 1
+        amount: 1000
+        due: "2026-02-15"
+        status: pending
+        description: "Website design - phase 1"
+      - number: 2
+        amount: 1000
+        due: "2026-03-15"
+        status: pending
+        description: "Website development - phase 2"
+      - number: 3
+        amount: 1500
+        due: "2026-04-15"
+        status: pending
+        description: "Monthly maintenance"
+
+  - id: globex-app-001
+    name: Globex Mobile App
+    path: "/projects/globex"
+    financials:
+      currency: USD
+    billing:
+      razon_social: "Globex Argentina S.R.L."
+      cuit: "30987654321"
+      condicion_iva: "IVA Responsable Inscripto"
+      domicilio: "Córdoba 1234, Rosario, Santa Fe"
+      tipo_comprobante: 211           # FCE MiPyMEs — requires CBU/alias in factura-config
+      referencia_comercial: "OC-2026-0042"
+      opcion_transferencia: "SCA"
+      certificado_mipyme: false
+    payments:
+      - number: 1
+        amount: 2500
+        due: "2026-04-01"
+        status: pending
+        description: "Mobile app MVP"
+      - number: 2
+        amount: 2500
+        due: "2026-05-01"
+        status: pending
+        description: "Mobile app - phase 2"

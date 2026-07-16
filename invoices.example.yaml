@@ -1,0 +1,28 @@
+# Idempotency ledger — EXAMPLE
+# The real invoices.yaml is created and updated by the tool itself; never edit it
+# by hand and never commit it (it is gitignored). One entry per emitted comprobante,
+# keyed "{project}-{payment}" (credit notes add a "-nc" suffix).
+
+acme-1:
+  comprobante: '00000001'
+  tipo: 11
+  cae: '00000000000000'
+  cae_vto: '2026-02-25'
+  monto: 1000.0
+  moneda: DOL
+  cotizacion: 1000.0
+  concepto: 'Website design - phase 1 - Pago 1/2'
+  filename: 20123456789_011_00001_00000001.pdf
+  emitted: '2026-02-15'
+
+acme-1-nc:
+  comprobante: '00000002'
+  tipo: 13
+  cae: '00000000000000'
+  cae_vto: '25/02/2026'
+  monto: 1000.0
+  moneda: DOL
+  cotizacion: 1000.0
+  concepto: 'NC: Website design - phase 1 - Pago 1/2'
+  filename: 20123456789_013_00001_00000002.pdf
+  emitted: '2026-02-20'

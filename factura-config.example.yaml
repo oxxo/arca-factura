@@ -1,0 +1,33 @@
+# AFIP Invoice Configuration — EXAMPLE
+# Copy to factura-config.yaml and fill in your real data.
+# NEVER commit factura-config.yaml (it is gitignored).
+
+emisor:
+  nombre: "Perez Juan"
+  cuit: "20123456789"
+  condicion_iva: "Responsable Monotributo"
+  domicilio: "Ciudad, Provincia"
+  punto_venta: 1
+  inicio_actividades: "01/01/2020"
+
+certificado:
+  key_path: "~/.afip/clave_privada.key"
+  crt_path: "~/.afip/certificado.crt"
+
+# homologacion | produccion
+# Keep it on homologacion until you have tested the full flow end to end.
+ambiente: "homologacion"
+
+# Bank details printed on FCE MiPyMEs invoices (Opcionales 2101/2102)
+pago:
+  cbu: "0000000000000000000000"
+  alias: "MI.ALIAS.CBU"
+  condicion: "Transferencia Bancaria"
+
+pdf:
+  output_base: ""  # Empty = <project path>/docs/facturas/
+
+# Source of truth for client billing data (read-only). See projects-registry.example.yaml
+# NOTE: a relative path resolves from the directory you run the command in —
+# prefer an absolute path unless you always run from the repo root.
+registry_path: "./projects-registry.example.yaml"

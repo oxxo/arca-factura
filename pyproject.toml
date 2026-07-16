@@ -1,0 +1,19 @@
+[project]
+name = "arca-factura"
+version = "0.1.0"
+description = "CLI for Argentina's electronic invoicing (ARCA/AFIP WSFE): Factura C + FCE MiPyMEs with CAE, idempotency ledger and audit log"
+authors = [{ name = "Iñaki Cormenzana" }]
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "zeep>=4.2.1",
+    "cryptography>=42.0",
+    "weasyprint>=62.0",
+    "jinja2>=3.1",
+    "qrcode[pil]>=7.4",
+    "pyyaml>=6.0",
+    "requests>=2.31",
+]
+
+[project.scripts]
+factura = "factura.cli:main"

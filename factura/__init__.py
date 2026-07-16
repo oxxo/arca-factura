@@ -1,0 +1,1 @@
+"""AFIP invoice automation tool."""

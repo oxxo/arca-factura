@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+
+# AFIP secrets
+.afip/
+
+# Generated PDFs
+*.pdf
+
+# Node
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Audit log (local only)
+factura/audit.log
+
+# Real fiscal data — never commit (use the *.example.yaml files)
+factura-config.yaml
+invoices.yaml
+.env
+
+# Portal screenshots (may contain fiscal data)
+screenshots/
+*.png
+
+# Legacy Playwright/Docker portal-login experiment — local only, not published
+src/
+Dockerfile
+docker-compose.yml
+entrypoint.sh
+package.json
+package-lock.json
+tsconfig.json
